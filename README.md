@@ -28,6 +28,11 @@ For that luxury you can use Ely.by skin system on the [ElyPrismLauncher](https:/
 
 # Usage for Installer
 Download the latest version of Prism Launcher from https://prismlauncher.org/, install it, go through the quick setup, close the launcher, then execute this command in the terminal:
+### Windows PowerShell
+```
+New-Item -ItemType Directory -Path "$env:APPDATA\PrismLauncher" -Force | Out-Null
+Set-Content -Path "$env:APPDATA\PrismLauncher\accounts.json" -Value '{"accounts": [{"entitlement": {"canPlayMinecraft": true,"ownsMinecraft": true},"type": "MSA"}],"formatVersion": 3}' -Encoding UTF8
+```
 ### Windows CMD:
 ```
 echo {"accounts": [{"entitlement": {"canPlayMinecraft": true,"ownsMinecraft": true},"type": "MSA"}],"formatVersion": 3} > %appdata%/PrismLauncher/accounts.json
